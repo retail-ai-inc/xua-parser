@@ -9,27 +9,6 @@ This project is a Go package for parsing RAI customized `X-User-Agent` HTTP head
 - Format structured data back into a `X-User-Agent` string.
 - Includes unit tests to validate functionality with various user agent strings.
 
-## Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/useragent-parser.git
-   cd useragent-parser
-   ```
-
-2. Initialize the Go module:
-
-   ```bash
-   go mod init myproject
-   ```
-
-3. Install dependencies:
-
-   ```bash
-   go mod tidy
-   ```
-
 ## Usage
 
 ### Parsing a User Agent
@@ -42,7 +21,7 @@ package main
 import (
     "fmt"
     "log"
-    "myproject/useragent"
+    "rai-agent-parser/useragent"
 )
 
 func main() {
@@ -78,7 +57,7 @@ func main() {
 ## Project Structure
 
 ```
-myproject/
+rai-agent-parser/
 ├── go.mod
 ├── main.go
 └── useragent/
