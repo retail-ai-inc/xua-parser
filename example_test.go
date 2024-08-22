@@ -8,7 +8,7 @@ import (
 
 func ExampleUserAgent() {
 
-	userAgent := `jp.retailai.raicart/3.9.3 (S-500, Android 10, trial)`
+	userAgent := `jp.retailai.App/3.9.3 (Devicel-Model, Android 10, Other)`
 	ua, err := useragent.Parse(userAgent)
 	if err != nil {
 		panic(err)
@@ -16,12 +16,12 @@ func ExampleUserAgent() {
 
 	// Output:
 	// useragent.UserAgent{
-	// 	AppName:     "jp.retailai.raicart",
+	// 	AppName:     "jp.retailai.App",
 	// 	AppVersion:  "3.9.3",
-	// 	DeviceModel: "S-500",
+	// 	DeviceModel: "Devicel-Model",
 	// 	OSName:      "Android",
 	// 	OSVersion:   "10",
-	// 	Retailer:    "trial",
+	// 	Others:      "Other",
 	// }
 	fmt.Printf("useragent.UserAgent{\n")
 	fmt.Printf("\tAppName:     %q,\n", ua.AppName)
@@ -29,7 +29,7 @@ func ExampleUserAgent() {
 	fmt.Printf("\tDeviceModel: %q,\n", ua.DeviceModel)
 	fmt.Printf("\tOSName:      %q,\n", ua.OSName)
 	fmt.Printf("\tOSVersion:   %q,\n", ua.OSVersion)
-	fmt.Printf("\tRetailer:    %q,\n", ua.Retailer)
+	fmt.Printf("\tOthers:      %q,\n", ua.Others)
 	fmt.Printf("}\n")
 
 }

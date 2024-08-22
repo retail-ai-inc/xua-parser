@@ -13,7 +13,7 @@ type UserAgent struct {
 	DeviceModel string
 	OSName      string
 	OSVersion   string
-	Retailer    string
+	Others      string
 }
 
 /*
@@ -24,7 +24,7 @@ uaRegex extracts the following information from the User-Agent string:
   - DeviceModel: Any characters except a comma.
   - OSName:      One or more letters.
   - OSVersion:   One or more digits.
-  - Retailer:    Any characters except a closing parenthesis.
+  - Others:      Any characters except a closing parenthesis.
 */
 var uaRegex = regexp.MustCompile(`^([^/]+)/([\d]+(?:\.[\d]+(?:\.[\d]+)?)?) \(([^,]+), ([a-zA-Z]+) (\d+), ([^\)]+)\)$`)
 
@@ -43,6 +43,6 @@ func Parse(ua string) (*UserAgent, error) {
 		DeviceModel: matches[3],
 		OSName:      matches[4],
 		OSVersion:   matches[5],
-		Retailer:    matches[6],
+		Others:      matches[6],
 	}, nil
 }
