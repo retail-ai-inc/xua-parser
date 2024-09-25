@@ -6,7 +6,7 @@ import (
 	ua "github.com/retail-ai-inc/xua-parser"
 )
 
-func ExampleUserAgent() {
+func ExampleParse() {
 
 	userAgent := `jp.retailai.App/3.9.3 (Devicel-Model, Android 10, Other)`
 	result, err := ua.Parse(userAgent)
