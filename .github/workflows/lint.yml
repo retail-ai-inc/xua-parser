@@ -1,0 +1,29 @@
+name: Lint, Build, and Test
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint-build-test:
+    permissions:
+      contents: read
+      pull-requests: write
+      checks: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Lint
+        uses: reviewdog/action-golangci-lint@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          go_version: '1.22'
+          level: error
+          filter_mode: nofilter
+          reporter: github-pr-review
+          golangci_lint_flags: "--timeout=180s --out-format=colored-line-number"
+      - name: Build
+        run: go build ./...
+      - name: Test
+        run: go test ./...
