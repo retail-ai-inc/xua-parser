@@ -1,9 +1,9 @@
-package ua_test
+package xua_parser_test
 
 import (
 	"fmt"
 
-	"github.com/retail-ai-inc/xua-parser/ua"
+	ua "github.com/retail-ai-inc/xua-parser"
 )
 
 func ExampleUserAgent() {

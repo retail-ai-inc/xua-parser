@@ -1,10 +1,10 @@
-package ua_test
+package xua_parser_test
 
 import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/retail-ai-inc/xua-parser/ua"
+	ua "github.com/retail-ai-inc/xua-parser"
 )
 
 func Test_Parse(t *testing.T) {

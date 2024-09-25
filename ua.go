@@ -1,5 +1,5 @@
-// Package ua provides a simple parser for the app-user-agent string.
-package ua
+// Package xua_parser provides a simple parser for User-Agent strings.
+package xua_parser
 
 import (
 	"fmt"
