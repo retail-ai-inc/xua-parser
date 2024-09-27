@@ -24,7 +24,7 @@ uaRegex extracts the following information from the User-Agent string:
   - AppName:     Any characters except a slash.
   - AppVersion:  One to three groups of digits separated by periods (e.g., 1, 1.0, 1.0.0).
   - DeviceModel: Any characters except a comma.
-  - OSDetail:    OS name, version, and other details.
+  - OSDetail:    OS name, version, and other details except a comma and the first two fields are separated by a space.
   - Others:      Any characters except a closing parenthesis.
 */
 var uaRegex = regexp.MustCompile(`^([^/]+)/([\d]+(?:\.[\d]+(?:\.[\d]+)?)?) \(([^,]+), ([^,]+), ([^\)]+)\)$`)
