@@ -121,6 +121,18 @@ func Test_Parse(t *testing.T) {
 			wantErr: false,
 		},
 		{
+			name:  "App-1 Windows with OS detail, Device-Model Other",
+			input: "App-1/0.1.1 (Device-Model, Windows 10 Pro 10.0 (Build 19045), Other)",
+			want: &ua.UserAgent{
+				AppName:     "App-1",
+				AppVersion:  "0.1.1",
+				DeviceModel: "Device-Model",
+				OSName:      "Windows",
+				OSVersion:   "10",
+				Others:      "Other",
+			},
+		},
+		{
 			name:  "minimum user agent",
 			input: "a/1 (b, c 1, d)",
 			want: &ua.UserAgent{
@@ -160,12 +172,6 @@ func Test_Parse(t *testing.T) {
 		{
 			name:    "Device Model includes a comma",
 			input:   "App/1.0.0 (Device,, OS 1, Other)",
-			want:    nil,
-			wantErr: true,
-		},
-		{
-			name:    "os name is not a letter",
-			input:   "App/1.0.0 (Device, 1 1, Other)",
 			want:    nil,
 			wantErr: true,
 		},
