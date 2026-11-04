@@ -23,7 +23,7 @@ package main
 import (
     "fmt"
     "log"
-    "github.com/retail-ai-inc/xua-parser/ua"
+    ua "github.com/retail-ai-inc/xua-parser"
 )
 
 func main() {
